@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style type="text/css">
+        body{
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        input[type="text"], input[type="password"]{
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        input[type="submit"]{
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+        }
+        input[type="submit"]:hover{
+            background-color: #3e8e41;
+        }
+        h3{
+            text-align: center;
+            color: #4CAF50;
+        }
+        table{
+            margin: 0 auto;
+            width: 50%;
+            border-collapse: collapse;
+        }
+        td{
+            padding: 10px;
+            text-align: left;
+            vertical-align: middle;
+            border-bottom: 1px solid #ddd;
+        }
+        td:first-child{
+            font-weight: bold;
+            width: 30%;
+        }
+        td:last-child{
+            text-align: center;
+        }
+        a{
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        p{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h3>Login Form</h3>
+        <form action="{{url_for('login')}} " method="POST">
+            <table>
+                <tr>
+                    <td>Username:</td>
+                    <td><input type="text" name="userName" placeholder="Enter your username here" required="required"></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="password" placeholder="Enter your password here" required="required"> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="submit" value="Login"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <p>New here? <a href="{{url_for('register')}}">Register</a></p>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style type="text/css">
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .link {
+            color: #333;
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Register Here</h1>
+        <form action="{{ url_for('register')}}" method="POST">
+            <label for="user_name">Enter your desired Username:</label>
+            <input type="text" name="userName" placeholder="Enter Username" required="required">
+
+            <label for="password">Enter your password:</label>
+            <input type="password" name="password" placeholder="Enter Password" required="required">
+
+            <label for="fname">Enter your First Name:</label>
+            <input type="text" name="firstName" placeholder="First Name" required="required">
+
+            <label for="lname">Enter your Last Name:</label>
+            <input type="text" name="lastName" placeholder="Last Name" required="required">
+
+            <label for="email">Enter your Email address:</label>
+            <input type="email" name="emailId" placeholder="example@abc.com" required="required">
+
+            <input type="submit" name="submit" value="Create Account">
+            <a href="/login" class="link">Already a User? Login Here</a>
+        </form>
+    </div>
+</body>
+</html>

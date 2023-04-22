@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User dashboard</title>
+    <style>
+        body {
+            background-color: #F5F5F5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 50px;
+        }
+        table {
+            margin: 50px auto;
+            border-collapse: collapse;
+            border: 2px solid black;
+            width: 50%;
+        }
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        td:first-child {
+            font-weight: bold;
+            width: 40%;
+        }
+        td:nth-child(2) {
+            font-style: italic;
+            text-align: center;
+        }
+        .btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px auto;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            width: 30%;
+            max-width: 200px;
+        }
+        .btn:hover {
+            background-color: #3E8E41;
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>User dashboard</h1>
+    <table>
+        <tr>
+            <td>First name:</td>
+            <td>{{user.firstName}}</td>
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td>{{user.lastName}}</td>
+        </tr>
+        <tr>
+            <td>Email ID:</td>
+            <td>{{user.emailId}}</td>
+        </tr>
+    </table>
+    <div class="center">
+        <h3>View the data pull for the given 8451 data?<br>
+            <a href="/datapull" class="btn">Click Here</a>
+        </h3>
+        <h3>View the visualization for the given 8451 data?<br>
+            <a href="/vizualization" class="btn">Click Here</a>
+        </h3>
+        <h3>Upload your files to view Data pull?<br>
+            <a href="/sirfile" class="btn">Click Here</a>
+        </h3>
+    </div>
+    <div class="center">
+        <h4><a href="{{url_for('logout')}}" class="btn">Logout</a></h4>
+    </div>
+</body>
+</html>
